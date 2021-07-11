@@ -1,7 +1,10 @@
 namespace SpriteKind {
     export const Entity = SpriteKind.create()
 }
-scene.setBackgroundColor(7)
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Entity, function (sprite, otherSprite) {
+	
+})
+tiles.setTilemap(tilemap`level1`)
 let Character = sprites.create(img`
     . . . . . . f f f f . . . . . . 
     . . . . f f f 2 2 f f f . . . . 
@@ -20,7 +23,98 @@ let Character = sprites.create(img`
     . . . . . f f f f f f . . . . . 
     . . . . . f f . . f f . . . . . 
     `, SpriteKind.Player)
+scene.cameraFollowSprite(Character)
 controller.moveSprite(Character)
+let Tree = sprites.create(img`
+    . . . . . . . c c . . . . . . . 
+    . . . . c c c 6 5 c 6 6 . . . . 
+    . . . . c 6 c 5 5 c 7 6 . . . . 
+    . . . 6 c c 7 5 5 7 c 6 6 . . . 
+    . . c c 7 7 7 7 7 5 7 7 c 6 . . 
+    . 6 6 6 c 6 7 7 7 7 6 c c 6 6 . 
+    c 7 7 7 6 c 7 c 6 7 6 7 7 7 7 6 
+    c c c 6 6 6 c 6 6 6 6 7 7 6 6 6 
+    . c c 7 6 6 6 6 6 7 7 7 7 c 6 . 
+    . c 7 7 6 6 7 6 6 7 7 6 7 7 c . 
+    . c c c c 7 7 6 f 7 7 c c c c . 
+    . . . . c 7 c f f c 7 c . . . . 
+    . . . . . 6 f e e e c . . . . . 
+    . . . . . e e e e e e . . . . . 
+    . . . . e e . e e . e e . . . . 
+    . . . . . . . e e . . . . . . . 
+    `, SpriteKind.Entity)
+let Tree2 = sprites.create(img`
+    . . . . . . . c c . . . . . . . 
+    . . . . c c c 6 5 c 6 6 . . . . 
+    . . . . c 6 c 5 5 c 7 6 . . . . 
+    . . . 6 c c 7 5 5 7 c 6 6 . . . 
+    . . c c 7 7 7 7 7 5 7 7 c 6 . . 
+    . 6 6 6 c 6 7 7 7 7 6 c c 6 6 . 
+    c 7 7 7 6 c 7 c 6 7 6 7 7 7 7 6 
+    c c c 6 6 6 c 6 6 6 6 7 7 6 6 6 
+    . c c 7 6 6 6 6 6 7 7 7 7 c 6 . 
+    . c 7 7 6 6 7 6 6 7 7 6 7 7 c . 
+    . c c c c 7 7 6 f 7 7 c c c c . 
+    . . . . c 7 c f f c 7 c . . . . 
+    . . . . . 6 f e e e c . . . . . 
+    . . . . . e e e e e e . . . . . 
+    . . . . e e . e e . e e . . . . 
+    . . . . . . . e e . . . . . . . 
+    `, SpriteKind.Entity)
+let Tree3 = sprites.create(img`
+    . . . . . . . c c . . . . . . . 
+    . . . . c c c 6 5 c 6 6 . . . . 
+    . . . . c 6 c 5 5 c 7 6 . . . . 
+    . . . 6 c c 7 5 5 7 c 6 6 . . . 
+    . . c c 7 7 7 7 7 5 7 7 c 6 . . 
+    . 6 6 6 c 6 7 7 7 7 6 c c 6 6 . 
+    c 7 7 7 6 c 7 c 6 7 6 7 7 7 7 6 
+    c c c 6 6 6 c 6 6 6 6 7 7 6 6 6 
+    . c c 7 6 6 6 6 6 7 7 7 7 c 6 . 
+    . c 7 7 6 6 7 6 6 7 7 6 7 7 c . 
+    . c c c c 7 7 6 f 7 7 c c c c . 
+    . . . . c 7 c f f c 7 c . . . . 
+    . . . . . 6 f e e e c . . . . . 
+    . . . . . e e e e e e . . . . . 
+    . . . . e e . e e . e e . . . . 
+    . . . . . . . e e . . . . . . . 
+    `, SpriteKind.Entity)
+let Tree4 = sprites.create(img`
+    . . . . . . . c c . . . . . . . 
+    . . . . c c c 6 5 c 6 6 . . . . 
+    . . . . c 6 c 5 5 c 7 6 . . . . 
+    . . . 6 c c 7 5 5 7 c 6 6 . . . 
+    . . c c 7 7 7 7 7 5 7 7 c 6 . . 
+    . 6 6 6 c 6 7 7 7 7 6 c c 6 6 . 
+    c 7 7 7 6 c 7 c 6 7 6 7 7 7 7 6 
+    c c c 6 6 6 c 6 6 6 6 7 7 6 6 6 
+    . c c 7 6 6 6 6 6 7 7 7 7 c 6 . 
+    . c 7 7 6 6 7 6 6 7 7 6 7 7 c . 
+    . c c c c 7 7 6 f 7 7 c c c c . 
+    . . . . c 7 c f f c 7 c . . . . 
+    . . . . . 6 f e e e c . . . . . 
+    . . . . . e e e e e e . . . . . 
+    . . . . e e . e e . e e . . . . 
+    . . . . . . . e e . . . . . . . 
+    `, SpriteKind.Entity)
+let Tree5 = sprites.create(img`
+    . . . . . . . c c . . . . . . . 
+    . . . . c c c 6 5 c 6 6 . . . . 
+    . . . . c 6 c 5 5 c 7 6 . . . . 
+    . . . 6 c c 7 5 5 7 c 6 6 . . . 
+    . . c c 7 7 7 7 7 5 7 7 c 6 . . 
+    . 6 6 6 c 6 7 7 7 7 6 c c 6 6 . 
+    c 7 7 7 6 c 7 c 6 7 6 7 7 7 7 6 
+    c c c 6 6 6 c 6 6 6 6 7 7 6 6 6 
+    . c c 7 6 6 6 6 6 7 7 7 7 c 6 . 
+    . c 7 7 6 6 7 6 6 7 7 6 7 7 c . 
+    . c c c c 7 7 6 f 7 7 c c c c . 
+    . . . . c 7 c f f c 7 c . . . . 
+    . . . . . 6 f e e e c . . . . . 
+    . . . . . e e e e e e . . . . . 
+    . . . . e e . e e . e e . . . . 
+    . . . . . . . e e . . . . . . . 
+    `, SpriteKind.Entity)
 animation.runImageAnimation(
 Character,
 [img`
